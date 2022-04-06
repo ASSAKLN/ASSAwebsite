@@ -1,0 +1,126 @@
+.container {
+  max-width: 750px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+.page {
+  background: var(--bg-transperant-color);
+  padding: 1.75rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(1px) saturate(200%);
+  border-top: 10px solid var(--main-color);
+  -webkit-box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.05),
+    0 2px 5px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.05),
+    0 2px 5px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.05), 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+}
+.page div div {
+  float: left;
+}
+.back {
+  position: relative;
+  margin-left: 3rem;
+  font-size: var(--h2-font-size);
+}
+.account img {
+  width: 40px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+.page div div .menu-icon {
+  cursor: pointer;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.page div div .menu-icon span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 2px;
+  width: 20px;
+  background: var(--main-color);
+  transform: translateX(-50%) translateY(-50%);
+  transition: background 0.5s;
+}
+.page div div .menu-icon span::before,
+.page div div .menu-icon span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5px;
+  transform: translateY(-6px);
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--main-color);
+  transition: transform 0.5s;
+}
+.page div div .menu-icon span::after {
+  transform: translateY(6px);
+}
+.page div .account {
+  float: right;
+  background: var(--bg-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.article-content {
+  clear: both;
+  max-width: 550px;
+  margin: 0 auto;
+}
+.article-content h1 {
+  font-size: var(--biggest-font-size);
+  text-align: center;
+  font-weight: var(--font-bold);
+  color: var(--main-color);
+}
+.article-content .article-date {
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-color);
+  font-size: 1.25em;
+}
+.article-content p {
+  color: var(--text-color);
+  text-align: justify;
+  line-height: 1.5em;
+  letter-spacing: 0.01em;
+  margin-top: 2rem;
+}
+.article-content span {
+  color: var(--text-color);
+  text-align: justify;
+  line-height: 1.5em;
+  letter-spacing: 0.01em;
+  margin: 3rem 0;
+}
+.article-content img {
+  max-width: 100%;
+}
+.article-content .desc {
+  text-align: right;
+  font-style: italic;
+  font-size: 0.8em;
+  color: #aaa;
+  margin: 5px 0 0 0;
+}
+.ref,
+.author-name {
+  color: var(--header-color);
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-bold);
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

@@ -1,0 +1,181 @@
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.title {
+  font-family: "Raleway";
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+  color: var(--text-color);
+  text-align: center;
+}
+
+p {
+  line-height: 1.5em;
+  font-size: var(--h2-font-size);
+}
+
+h1 + p,
+p + p {
+  margin-top: 1rem;
+}
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-wrap {
+  margin: 1rem;
+  transform: perspective(800px);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.card-wrap:hover .card-info {
+  transform: translateY(0);
+}
+.card-wrap:hover .card-info p {
+  opacity: 1;
+}
+.card-wrap:hover .card-info,
+.card-wrap:hover .card-info p {
+  transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card-wrap:hover .card-info:after {
+  transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 1;
+  transform: translateY(0);
+}
+.card-wrap:hover .card-bg {
+  transition: 1s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 1s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0.8;
+}
+.card-wrap:hover .card,
+.card-wrap:hover .card2,
+.card-wrap:hover .card3 {
+  transition: 1s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 1s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: var(--text-color) 0 0 40px 5px, var(--bg-color) 0 0 0 1px,
+    var(--bg2-color) 0 30px 60px 0, inset var(--main-color) 0 0 0 5px,
+    inset var(--header-color) 0 0 0 6px;
+}
+.card2 {
+  position: relative;
+  flex: 0 0 480px;
+  /* 240 and 320 after few posts*/
+  width: 480px;
+  height: 320px;
+  background-color: var(--bg-transparent-color);
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: var(--bg2-color) 0 30px 60px 0, inset var(--bg-color) 0 0 0 5px,
+    inset var(--header-color) 0 0 0 6px;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.card {
+  position: relative;
+  flex: 0 0 240px;
+  /* 240 and 320 after few posts*/
+  width: 240px;
+  height: 320px;
+  background-color: var(--bg-transparent-color);
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: var(--bg2-color) 0 30px 60px 0, inset var(--bg-color) 0 0 0 5px,
+    inset var(--header-color) 0 0 0 6px;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.card3 {
+  position: relative;
+  flex: 0 0 300px;
+  /* 240 and 320 after few posts*/
+  width: 300px;
+  height: 380px;
+  background-color: var(--bg-transparent-color);
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: var(--bg2-color) 0 30px 60px 0, inset var(--bg-color) 0 0 0 5px,
+    inset var(--header-color) 0 0 0 6px;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.card-bg {
+  opacity: 0.5;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 120%;
+  height: 120%;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+    opacity 0.6s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  pointer-events: none;
+}
+
+.card-info {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  color: var(--header-color);
+  transform: translateY(40%);
+  transition: 1s 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.card-info p {
+  opacity: 0;
+  transition: 1s 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  text-shadow: var(--bg-transparent-color) 0 4px 4px;
+}
+.card-info * {
+  position: relative;
+  z-index: 1;
+}
+.card-info:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 600px;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--bg-color) 100%
+  );
+  background-blend-mode: overlay;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 0.5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.card-info h1 {
+  font-family: "Playfair Display";
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+  text-shadow: var(--bg-transparent-color) 0 5px 5px;
+}
+@media screen and (max-width: 768px) {
+  .card2 {
+    position: relative;
+    flex: 0 0 320px;
+    /* 240 and 320 after few posts*/
+    width: 240px;
+    height: 240px;
+  }
+}
+
+.margin {
+  margin-bottom: 2rem;
+}

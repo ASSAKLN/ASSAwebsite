@@ -1,0 +1,200 @@
+@-webkit-keyframes slide {
+  0%,
+  50% {
+    opacity: 0;
+    display: block !important;
+  }
+  100% {
+    opacity: 1;
+    display: block !important;
+  }
+}
+@keyframes slide {
+  0%,
+  50% {
+    opacity: 0;
+    display: block !important;
+  }
+  100% {
+    opacity: 1;
+    display: block !important;
+  }
+}
+.event {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: 0.25s;
+}
+.credit {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: inherit;
+}
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  overflow: hidden;
+  min-width: 600px;
+  max-width: 900px;
+  width: calc(100% - 100px);
+  height: 400px;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+@media screen and (max-width: 718px) {
+  .options {
+    min-width: 520px;
+  }
+  .option:nth-child(5) {
+    display: none;
+  }
+}
+@media screen and (max-width: 638px) {
+  .options {
+    min-width: 440px;
+  }
+  .option:nth-child(4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 558px) {
+  .options {
+    min-width: 360px;
+  }
+  .option:nth-child(3) {
+    display: none;
+  }
+}
+@media screen and (max-width: 478px) {
+  .options {
+    min-width: 280px;
+    box-shadow: none !important;
+  }
+  .option:nth-child(2) {
+    display: none;
+  }
+}
+.option {
+  position: relative;
+  overflow: hidden;
+  min-width: 60px;
+  margin: 10px;
+  background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
+  background-size: auto 120%;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  border-radius: 1rem;
+  background-position: center !important;
+  background-size: cover !important;
+}
+.option:nth-child(1) {
+  --defaultBackground: #ed5565;
+}
+.option:nth-child(2) {
+  --defaultBackground: #fc6e51;
+}
+.option:nth-child(3) {
+  --defaultBackground: #ffce54;
+}
+.option:nth-child(4) {
+  --defaultBackground: #2ecc71;
+}
+.option:nth-child(5) {
+  --defaultBackground: #5d9cec;
+}
+.option:nth-child(6) {
+  --defaultBackground: #ac92ec;
+}
+.option.active-event {
+  flex-grow: 10000;
+  max-width: 600px;
+  margin: 0px;
+  border-radius: 1rem;
+  background-size: auto 100%;
+  transform: scale(0.95);
+}
+.option.active-event .shadow {
+  backdrop-filter: blur(6px);
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: inset 0 -120px 120px -120px var(--bg2-color),
+    inset 0 -120px 120px -100px var(--bg2-color);
+}
+.option.active-event .label {
+  bottom: 40px;
+  left: 20px;
+}
+.option.active-event .label .info > div {
+  left: 0px;
+  opacity: 1;
+}
+.option:not(.active-event) {
+  flex-grow: 1;
+  border-radius: 1rem;
+}
+.option:not(.active-event) .shadow {
+  bottom: -40px;
+  box-shadow: inset 0 -120px 0px -120px var(--bg2-color),
+    inset 0 -120px 0px -100px var(--bg2-color);
+}
+.option:not(.active-event) .label {
+  bottom: 10px;
+  left: 10px;
+}
+.option:not(.active-event) .label .info > div {
+  left: 20px;
+  opacity: 0;
+}
+.option .shadow {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 120px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+.option .label {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  height: 40px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+.option .label .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: var(--header-color);
+  color: var(--defaultBackground);
+}
+.option .label .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  color: var(--header-color);
+}
+.option .label .info > div {
+  position: relative;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+}
+.option .label .info .main {
+  font-weight: bold;
+  font-size: var(--h1-font-size);
+}
+.option .label .info .sub {
+  transition-delay: 0.2s;
+  max-width: 100%;
+}

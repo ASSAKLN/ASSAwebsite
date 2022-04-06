@@ -1,0 +1,29 @@
+@media screen and (max-width: 798px) {
+  .card-wrap:nth-child(6) {
+    display: none;
+  }
+}
+@media screen and (max-width: 718px) {
+  .card-wrap:nth-child(5) {
+    display: none;
+  }
+}
+@media screen and (max-width: 638px) {
+  .card-wrap:nth-child(4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 558px) {
+  .card-wrap:nth-child(3) {
+    display: none;
+  }
+}
+@media screen and (max-width: 478px) {
+  .card-wrap:nth-child(2) {
+    display: none;
+  }
+}
+
+.margin {
+  margin-bottom: 2rem;
+}
