@@ -274,7 +274,6 @@ nav ul {
 }
 nav ul li {
   display: inline-block;
-  float: left;
 }
 nav ul li:not(:first-child) {
   margin-left: 25px;
@@ -675,19 +674,23 @@ nav ul li a:hover {
   top: 0;
   z-index: -10;
   filter: blur(2px) saturate(200%) brightness(200%) contrast(200%);
-  webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: var(--header-color);
 }
 /*===== Social section =====*/
+.social{
+  max-width: 100vw;
+}
 .social-menu ul {
-  position: absolute;
-  bottom: 0.5vh;
-  left: 50%;
+  position: relative;
+  bottom: 4rem;
+  align-items: center;
+  justify-content: center;
   padding: 0;
   margin: 0;
-  transform: translate(-50%, -50%);
   display: flex;
+  z-index: var(--z-tooltip);
 }
 
 .social-menu ul li {
