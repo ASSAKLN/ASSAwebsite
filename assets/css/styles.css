@@ -440,18 +440,21 @@ nav ul li a:hover {
 .mySlides {
   display: none;
 }
-.mySlides img {
+.mySlides img{
   display: block;
   width: 100%;
 }
+.mySlides video{
+  max-width: 60vw;
+}
 
 /* image gradient overlay [optional] */
-/*  .mySlides::after {
+/* .mySlides::after {
   content: "";
   position: absolute;
   inset: 0;
     background-image: linear-gradient(-45deg, rgba(110, 0, 255, .1), rgba(70, 0, 255, .2));
-} */
+} 
 
 /* Next & previous buttons */
 .prev,
@@ -1018,6 +1021,9 @@ button:hover .button-text {
     margin-top: var(--mb-3);
     margin-bottom: 6rem;
   }
+  .mySlides video{
+  max-width: 40vw;
+}
   .container2 {
     margin-bottom: 6rem;
   }
