@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ASSA UOK</title>
         <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="assets/css/nasa.css">
         <link rel="stylesheet" href="assets/css/styles.css">
         <link rel="stylesheet" href="assets/css/team.css">
         <link rel="stylesheet" href="assets/css/team2.css">
@@ -64,21 +65,22 @@
                 </div>
             </div>
         </nav>
+  
         <!--===== Landing page =====-->
         <main>
             <div class="main-wrapper">
                 <div class="main_image">
                     <!-- Full-width images with number and caption text -->
                     <div class="carousel-container any-shadow2">
-                        <a href="./assets/pages/event3.html">
+                        <a href="./assets/pages/event4.html">
                             <div class="mySlides animate">
-                                <img src="./assets/img/main/6.jpg" alt="slide" />
+                                <img src="./assets/img/main/2.jpg" alt="slide" class="nasa"/>
                                 <div class="number">1 / 5</div>
-                                <div class="text">
-                                    ✨📸 Astro Photography Workshop, Kasakale Beach 📸✨
-                                </div>
+                                <div class="text0">NASA image of the day</div>
+                                <div class="text">🌎💫 🌎💫</div>
                             </div>
                         </a>
+
                         <a href="./assets/pages/event4.html">
                             <div class="mySlides animate">
                                 <img src="./assets/img/main/1.jpg" alt="slide" />
@@ -261,6 +263,9 @@
                         </div>
                     </a>
                     </section>
+   
+    <div class="nasa"></div>
+
         <!--===== about page =====-->
         <section class="about-section">
             <h2 class="section-title">About us</h2>
@@ -407,6 +412,7 @@
         <script src="./assets/js/script.js"></script>
         <script src="./assets/js/team.js"></script>
         <script src="./assets/js/timer.js"></script>
+        <script src="./assets/js/nasa.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
@@ -476,11 +482,31 @@
 
         });
 
-    
+        const url = `https://api.nasa.gov/planetary/apod?api_key=57dNorW8I85carzwdkbBduOBYUjrXEd5vL2SVOwZ`
+
+        fetch(url)
+            .then(res => res.json()) // parse response as JSON
+            .then(data => {
+                console.log(data)
+                if (data.media_type === 'image') {
+                    document.querySelector('.nasa').src = data.hdurl
+
+                } else if (data.media_type === 'video') {
+                    document.querySelector('.nasa').src = data.url
+                }
+
+                document.querySelector('.text').innerText = data.title 
+
+            })
+            .catch(err => {
+                console.log(`error ${err}`)
+            });
+
         </script>
         <script type="text/javascript"
             src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+   
     </body>
 
 </html>
