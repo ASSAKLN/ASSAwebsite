@@ -85,8 +85,8 @@
                             <div class="mySlides animate">
                                 <img src="./assets/img/main/2.jpg" alt="slide" class="nasa"/>
                                 <div class="number">2/ 5</div>
-                                <div class="text0">NASA image of the day</div>
-                                <div class="text">API is not working - try again later</div>
+                                <div class="text0">NASA image of the day of <span class="textdate">DATE</span></div>
+                                <div class="texttitle">API is not working - try again later</div>
                             </div>
                         </a>
 
@@ -492,10 +492,10 @@
             .then(res => res.json()) // parse response as JSON
             .then(data => {
                 console.log(data)
-                 document.querySelector('.nasa').src = data.url
+                document.querySelector('.nasa').src = data.url
 
-                document.querySelector('.text').innerText = data.title 
-
+                document.querySelector('.texttitle').innerText = data.title 
+                document.querySelector('.textdate').innerText = data.date 
             })
             .catch(err => {
                 console.log(`error ${err}`)
