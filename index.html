@@ -72,20 +72,21 @@
                 <div class="main_image">
                     <!-- Full-width images with number and caption text -->
                     <div class="carousel-container any-shadow2">
-                        <a href="./assets/pages/event4.html">
-                            <div class="mySlides animate">
-                                <img src="./assets/img/main/2.jpg" alt="slide" class="nasa"/>
-                                <div class="number">1 / 5</div>
-                                <div class="text0">NASA image of the day</div>
-                                <div class="text">🌎💫 🌎💫</div>
-                            </div>
-                        </a>
-
+                        
                         <a href="./assets/pages/event4.html">
                             <div class="mySlides animate">
                                 <img src="./assets/img/main/1.jpg" alt="slide" />
-                                <div class="number">2 / 5</div>
+                                <div class="number">1 / 5</div>
                                 <div class="text">🌎💫NEW | ASSA T-shirt 🌎💫</div>
+                            </div>
+                        </a>
+
+                        <a href="https://apod.nasa.gov/">
+                            <div class="mySlides animate">
+                                <img src="./assets/img/main/2.jpg" alt="slide" class="nasa"/>
+                                <div class="number">2/ 5</div>
+                                <div class="text0">NASA image of the day of <span class="textdate">DATE</span></div>
+                                <div class="texttitle">API is not working - try again later</div>
                             </div>
                         </a>
 
@@ -93,9 +94,23 @@
                             <div class="mySlides animate">
                                 <img src="./assets/img/main/3.jpg" alt="slide" />
                                 <div class="number">3 / 5</div>
-                                <div class="text">🌎💫 විශ්වයේ තතු - 29 🌎💫</div>
+                                <div class="text">🌎💫 NEW | විශ්වයේ තතු  🌎💫</div>
                             </div>
                         </a>
+
+                            <div class="mySlides animate">
+                                <img src="./assets/img/main/4.jpg" alt="slide" />
+                                <div class="number">4 / 5</div>
+                                <div class="text">🌎💫 WIEDZA 2.0 🌎💫</div>
+                            </div>
+                            </a>
+
+                            <div class="mySlides animate">
+                                <img src="./assets/img/main/5.jpg" alt="slide" />
+                                <div class="number">5 / 5</div>
+                                <div class="text">🌎💫 WIEDZA 2.0 🌎💫</div>
+                            </div>
+                            </a>
                 
                         <!-- Next and previous buttons -->
                         <a class="prev" onclick="prevSlide()">&#10094;</a>
@@ -113,7 +128,7 @@
                 </div>
                 <div class="container2">
                     <div class="content glass any-shadow2">
-                        <a href="./assets/pages/event3.html">
+                        <a href="#">
                         <h1><span>ASSA</span> - <span> UOK</span></h1>
                         <h3>Astronomy and Space Science Association | University of Kelaniya</h3>
                         <p> </p>
@@ -129,7 +144,7 @@
                                     <li><a href="https://www.instagram.com/kelani_astro/" target="blank"><i class="fab fa-instagram"></i></a></li>
                                     <li><a href="https://www.linkedin.com/company/astronomy-and-space-science-association" target="blank"><i class="fab fa-linkedin-in"></i></a></li>
                                     <li><a href="https://twitter.com/AstroKelani" target="blank"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" target="blank"><i class="fab fa-tiktok"></i></a></li>
+                                    <li><a href="https://www.tiktok.com/@assakln0" target="blank"><i class="fab fa-tiktok"></i></a></li>
                                 </ul>
                             </div>
                         </section>
@@ -171,7 +186,7 @@
                 <li><a href="https://www.instagram.com/kelani_astro/" target="blank"><i class="fab fa-instagram"></i></a></li>
                 <li><a href="https://www.linkedin.com/company/astronomy-and-space-science-association" target="blank"><i class="fab fa-linkedin-in"></i></a></li>
                 <li><a href="https://twitter.com/AstroKelani" target="blank"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#" target="blank"><i class="fab fa-tiktok"></i></a></li>
+                <li><a href="https://www.tiktok.com/@assakln0" target="blank"><i class="fab fa-tiktok"></i></a></li>
             </ul>
         </div>
         </section>
@@ -491,10 +506,10 @@
             .then(res => res.json()) // parse response as JSON
             .then(data => {
                 console.log(data)
-                 document.querySelector('.nasa').src = data.url
+                document.querySelector('.nasa').src = data.url
 
-                document.querySelector('.text').innerText = data.title 
-
+                document.querySelector('.texttitle').innerText = data.title 
+                document.querySelector('.textdate').innerText = data.date 
             })
             .catch(err => {
                 console.log(`error ${err}`)

@@ -482,6 +482,20 @@ nav ul li a:hover {
 }
 
 /* Caption text */
+.texttitle {
+  color: white;
+  background-color: rgba(196, 215, 221, 0.267);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  font-size: var(--h2-font-size);
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  z-index: var(--z-fixed);
+}
 .text {
   color: white;
   background-color: rgba(196, 215, 221, 0.267);
