@@ -58,7 +58,7 @@
             'dec': -5.3911111,
             'ground': false,
             'constellations': true,
-            'fov': 15,
+            'fov': 125,
             'callback': {
                 'contextmenu': function (e) {
                     console.log('contextmenu callback', e);
@@ -79,20 +79,20 @@
             }
         });
 
-        S('button#pleiades').on('click', function () { planetarium8.panTo(56.8690917, 24.1053111, 3000); });
-        S('button#M82').on('click', function () { planetarium8.panTo(148.9684583, 69.6797028, 3000); });
-        S('button#M1').on('click', function () { planetarium8.panTo(83.6330833, 22.0145000, 3000); });
-        S('button#M42').on('click', function () { planetarium8.panTo(83.8220833, -5.3911111, 3000); });
+        S('button#pleiades').on('click', function () { planetarium8.panTo(110, 22, 1000); });
+        S('button#M82').on('click', function () { planetarium8.panTo(148.9684583, 69.6797028, 1000); });
+        S('button#M1').on('click', function () { planetarium8.panTo(83.6330833, 22.0145000, 1000); });
+        S('button#M42').on('click', function () { planetarium8.panTo(83.8220833, -5.3911111, 1000); });
 
     });
 
     </script>
 
     <div id="starmap8" style="width:100%; height: calc(100vh - var(--header-height) - 24vh);"></div>
-    <button style="color: white; border: 2px solid var(--main-color); padding: 0.5rem" id="pleiades">Move to The Pleiades</button>
-    <button style="color: white; border: 2px solid var(--main-color); padding: 0.5rem"  id="M1">Move to M1</button>
-    <button style="color: white; border: 2px solid var(--main-color); padding: 0.5rem"  id="M82">Move to M82</button>
-    <button style="color: white; border: 2px solid var(--main-color); padding: 0.5rem"  id="M42">Move to M42</button>
+    <button style="color: white; border: 2px solid var(--main-color); padding: 0.5rem" id="pleiades">Move to The Sun</button>
+    <button style="color: white; border: 2px solid var(--main-color); padding: 0.5rem"  id="M1">Move to Moon (not working)</button>
+    <button style="color: white; border: 2px solid var(--main-color); padding: 0.5rem"  id="M82">Move to Mars (not working)</button>
+    <button style="color: white; border: 2px solid var(--main-color); padding: 0.5rem"  id="M42">Move to Jupiter (not working)</button>
         <!--===== FOOTER =====-->
         <footer class="footer glass2 any-shadow2">
             <div class="footer__container main__container ">
