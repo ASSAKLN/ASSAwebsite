@@ -608,7 +608,7 @@ nav ul li a:hover {
   text-align: center !important;
   font-size: var(--biggest-font-size);
   position: relative;
-  bottom: 10rem;
+  bottom: 3rem;
 }
 .whatsnew h1 {
 color: var(--header-color);
