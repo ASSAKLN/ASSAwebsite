@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/article.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>New Add On</title>
+    <link rel="icon" href="../img/logos/assa.ico">
+</head>
+
+<body>
+    <!--===== Cursor and Loader, detect browser - lastly =====-->
+    <!--===== SCROLL TOP =====-->
+    <a href="#" class="scrolltop rbutton" id="scroll-top">
+        <i class='bx bxs-chevrons-up scrolltop__icon'></i>
+    </a>
+    <!--===== HEADER =====-->
+    <nav class="glass3 any-shadow2">
+        <div class="nav_flex ">
+            <input type="checkbox" id="nav" class="hidden" />
+            <label for="nav" class="nav-open"><i></i><i></i><i></i></label>
+            <div class="logo">
+                <a href="../../index.html"><img class="logo-img" src="../img/logos/ASSA.png" alt=""></a>
+                <a href="../../index.html">
+                    <p class="logo_text">ASSA<span id="highlight"></span></p>
+                </a>
+            </div>
+            <div class="nav-container">
+                <ul>
+                    <li>
+                        <div id="google_translate_element"></div>
+                    </li>
+                    <li><a href="../../index.html">HOME</a></li>
+                    <li><a href="../Pages/event.html">EVENTS</a></li>
+                    <li><a href="../Pages/Gallery.html">GALLERY</a></li>
+                    <li><a href="../Pages/membership.html">MEMEBRSHIP</a></li>
+                    <li><a href="../Pages/contact.html">CONTACT US</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <script src="./../sky/stuquery.min.js"></script>
+    <script src="./../sky/virtualsky.min.js" type="text/javascript"></script>
+    <script>
+
+    var planetarium8;
+    S(document).ready(function () {
+
+        planetarium8 = S.virtualsky({
+            'id': 'starmap8',
+            'projection': 'gnomic',
+            'ra': 83.8220833,
+            'dec': -5.3911111,
+            'ground': false,
+            'constellations': true,
+            'fov': 125,
+            'callback': {
+                'contextmenu': function (e) {
+                    console.log('contextmenu callback', e);
+                    if (e.ra && e.dec) {
+                        planetarium8.addPointer({
+                            ra: e.ra,
+                            dec: e.dec,
+                            label: "Clicked here",
+                            colour: "#ffffff",
+                        });
+                        planetarium8.draw();
+                    }
+                },
+                'click': function (e) {
+                    e.nearest = e.data.sky.nearestObject(e.x, e.y);
+                    console.log(e.nearest, e.ra, e.dec);
+                }
+            }
+        });
+
+        S('button#pleiades').on('click', function () { planetarium8.panTo(110, 22, 1000); });
+        S('button#M82').on('click', function () { planetarium8.panTo(148.9684583, 69.6797028, 1000); });
+        S('button#M1').on('click', function () { planetarium8.panTo(83.6330833, 22.0145000, 1000); });
+        S('button#M42').on('click', function () { planetarium8.panTo(83.8220833, -5.3911111, 1000); });
+
+    });
+
+    </script>
+
+    <div id="starmap8" style="width:100%; height: calc(100vh - var(--header-height) - 24vh);"></div>
+    <button style="color: var(--header-color); border: 2px solid var(--main-color); padding: 0.5rem" id="pleiades">Move to The Sun</button>
+    <button style="color: var(--header-color); border: 2px solid var(--main-color); padding: 0.5rem"  id="M1">Move to Moon (not working)</button>
+    <button style="color: var(--header-color); border: 2px solid var(--main-color); padding: 0.5rem"  id="M82">Move to Mars (not working)</button>
+    <button style="color: var(--header-color); border: 2px solid var(--main-color); padding: 0.5rem"  id="M42">Move to Jupiter (not working)</button>
+       
+    <!--===== FOOTER =====-->
+        <footer class="footer glass2 any-shadow2">
+            <div class="footer__container main__container ">
+                <div class="footer__img">
+                    <div>
+                        <img src="./assets/img/logos/KELastroLogo.png" class="footer__logo " alt="">
+                        <img src="./assets/img/logos/astoria2.png" class="footer__logo" alt="">
+                        <img src="./assets/img//logos/star.png" class="footer__logo" alt="">
+                        <img src="./assets/img//logos/star.png" class="footer__logo" alt="">
+                    </div>
+                </div><br>
+                <span class="footer__copy">&#169;ASSA UOK, 2022</span><br>
+                <h3 class="footer__sub"><br>© 2022 Astronomy and Space Science Association, University of Kelaniya, Sri Lanka. All
+                    Rights Reserved.</h3>
+                <a href="https://deeghayu.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    <h3 class="footer__sub">&lt; / Code by Deeghayu Adhikari &gt;</h3>
+                </a>
+            </div>
+        </footer>
+<script src="./../js/main.js" type="text/javascript"></script>
+<script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

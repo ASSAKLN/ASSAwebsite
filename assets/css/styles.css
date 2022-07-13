@@ -429,7 +429,7 @@ nav ul li a:hover {
 .carousel-container {
   border-radius: 1rem;
   overflow: hidden;
-  max-width: 95vw;
+  max-width: 90vw;
   position: relative;
   box-shadow: 0 0 30px -20px #223344;
   margin: auto;
@@ -583,8 +583,8 @@ nav ul li a:hover {
   background-position: center;
   background-size: cover;
   padding: 0;
-  max-width: 95vw;
-  margin-bottom: rem;
+  max-width: 90vw;
+  margin-bottom: 1rem;
 }
 .glass {
   background: var(--bg-transperant-color);
@@ -604,11 +604,24 @@ nav ul li a:hover {
   background: var(--bg-transperant-color);
   box-shadow: 0 2px 8px 0 var(--bg-color);
 }
+.whatsnew{
+  text-align: center !important;
+  font-size: var(--biggest-font-size);
+  position: relative;
+  bottom: 10rem;
+}
+.whatsnew h1 {
+color: var(--header-color);
+}
+.whatsnew h1:hover {
+  color: var(--main-color) !important;
+  transition: 0.4s;
+}
 .content {
   color: var(--header-color);
   padding-top: var(--mb-4);
-  padding-left: var(--mb-4);
-  padding-right: var(--mb-4);
+  padding-left: var(--mb-2);
+  padding-right: var(--mb-2);
   border-radius: 1rem;
 }
 .content h1 {
@@ -729,11 +742,10 @@ nav ul li a:hover {
 }
 .social-menu2 ul {
   position: relative;
-  bottom: 1rem;
   align-items: center;
   justify-content: center;
   padding: 0;
-  margin: 0;
+  margin:0 ;
   display: flex;
   z-index: var(--z-tooltip);
 }
@@ -1080,7 +1092,7 @@ button:hover .button-text {
   }
 
   .carousel-container {
-    max-width: 60vw;
+    max-width: 50vw;
     margin-top: var(--mb-3);
     margin-bottom: 6rem;
   }
@@ -1091,7 +1103,7 @@ button:hover .button-text {
     margin-bottom: 6rem;
   }
   .content {
-    max-width: 30vw;
+    max-width: 40vw;
     margin-top: var(--mb-3);
   }
   .about-wrapper {
